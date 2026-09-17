@@ -6,8 +6,7 @@ $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 
                     /******CORS*****/
 //verifica se a origem da requisição esta na lista de permissoes
-//se sim manda um comando para o CORS do navegador autorizando 
-in_array($origin, $allowedOigins) ? header("Access-Control-Allow-Origin: $origin ") : null;
+in_array($origin, $allowedOrigins) ? header("Access-Control-Allow-Origin: $origin ") : null;
 //define quais metodos http sao aceitos
 header("Access-Control-Allow-Methods: GET, POST, PATCH, DELETE, OPTIONS");
 //Autoriza o envio de dados JSON;
@@ -31,7 +30,7 @@ match($uri){
 /*TRATAMENTO DE ERRO**/
 function notFound(): void
 {
-  http_reponse_code(404);
+  http_response_code(404);
   echo json_encode(['error' => 'not found']);
 }
 

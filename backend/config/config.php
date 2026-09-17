@@ -1,7 +1,7 @@
 <?php
 // variavel que aponta para o banco de dados
 // __DIR__ para sempre referenciar este arquivo para acessar o banco de dados
-const DATA_FILE = __DIR__ . '/../data/data.json/';
+const DATA_FILE = __DIR__ . '/../data/data.json';
 
 //lista de urls autorizadas para fazer reqisiçoes http
 $allowedOrigins = [
