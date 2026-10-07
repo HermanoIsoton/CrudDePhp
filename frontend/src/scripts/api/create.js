@@ -7,6 +7,7 @@ export async function createUser(apiUrl, { name, age, email }) {
             age: Number(age),
             email,
         });
+        console.log(response);
         return response.data;
     } catch (error) {
         const message = error.response?.data?.error || 'Failed to create user';
