@@ -8,7 +8,7 @@ $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 //verifica se a origem da requisição esta na lista de permissoes
 in_array($origin, $allowedOrigins) ? header("Access-Control-Allow-Origin: $origin ") : null;
 //define quais metodos http sao aceitos
-header("Access-Control-Allow-Methods: GET, POST, PATCH, DELETE, OPTIONS");
+header("Access-Control-Allow-Methods: GET, PUT, POST, PATCH, DELETE, OPTIONS");
 //Autoriza o envio de dados JSON;
 header('Access-Control-Allow-Headers: Content-Type');
 
@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] === 'OPTIONS'){
 $uri = strtok($_SERVER['REQUEST_URI'], '?');
 
 match($uri){
-    '/api/users' => require __DIR__ . '/../api.php',
+    '/api/users' => require __DIR__ . '/../src/api.php',
     default => notFound(),
 };
 

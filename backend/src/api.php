@@ -7,7 +7,7 @@ match ($method){
     'GET' => handleGet(),
     'POST' => handlePost(),
     'PUT' => handlePut(),
-    'PATCH' => handlePach(),
+    'PATCH' => handlePatch(),
     'DELETE' => handleDelete(),
     default => handleMethodAllowed(),
 };  
